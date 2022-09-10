@@ -5,8 +5,8 @@ from email.mime.text import MIMEText
 from email.utils import formataddr
 import json, copy, requests, time, re, smtplib
 import schedule
-my_sender = '2543603118@qq.com'  # 发件人邮箱账号
-my_pass = 'tjcakmejjqjmeafj'  # 发件人邮箱授权码
+my_sender = ''  # 发件人邮箱账号
+my_pass = ''  # 发件人邮箱授权码
 
 # 当今日没有填报时，在https://app.bupt.edu.cn/ncov/wap/default/index下进行填报，
 # 全部填完，不要提交，f12打开控制台，在Console页面下输入代码 console.log(vm.info) 就会得到以下信息，之后每天就默认填以下信息
@@ -189,7 +189,7 @@ def main(users_box):
 
 if __name__ == '__main__':
     box = [
-        ['2022110304', 'Lincoln7475', 'fanlongjun@bupt.edu.cn']
+        ['学号', '统一身份认证密码', '邮箱']
     ]
     report_time = '01:02'
     schedule.every().day.at(report_time).do(main, box)
